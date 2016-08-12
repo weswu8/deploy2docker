@@ -255,6 +255,8 @@ def process_logs(conn, stream_name):
     :param log_file: log file name to be processed
     '''
 
+    while not os.path.exists(access_log_file):
+        time.sleep(1)
     t = Tail(access_log_file)
     t.register_callback(put_to_kinesis)
     t.follow(put_records_count,put_records_interval)       # DO NOT sleep in fact
