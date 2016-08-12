@@ -31,7 +31,7 @@ from boto import kinesis
 region_name = 'us-east-1'
 stream_name = ''
 initialPositionInStream = 'LATEST'
-config_file = 'producer.conf'
+config_file = '/usr/local/producer/producer.conf'
 access_log_file = 'gatekeeper.access.log'
 logging_file = './producer.log'
 put_records_count = 2
