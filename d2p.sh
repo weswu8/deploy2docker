@@ -1,5 +1,8 @@
 #!/bin/sh
 
+`aws ecr get-login`
+docker rmi `docker images`
+
 cd gatekeeper
 docker build -t gatekeeper .
 docker tag gatekeeper:latest 671223302517.dkr.ecr.us-east-1.amazonaws.com/gatekeeper:latest
